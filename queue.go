@@ -99,15 +99,3 @@ func (stack *ImmutableStack) Head() interface{} {
 func (stack *ImmutableStack) IsEmpty() bool {
 	return stack == nil
 }
-
-// Reverse returns a copy of reversed stack
-func (stack *ImmutableStack) Reverse() *ImmutableStack {
-	copy := &ImmutableStack{}
-
-	for !stack.IsEmpty() {
-		copy = copy.Push(stack.v)
-		stack = stack.Pop()
-	}
-
-	return copy
-}
